@@ -25,22 +25,22 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class RepoDetailFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    private var listener: OnFragmentInteractionListener? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var listener: OnFragmentInteractionListener? = null
+    //private var chosenRepo: RepoDetails? = null
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
+        //TODO Get chosen repo from activity
+        //activity
+        //chosenRepo = arguments!!.getParcelable("CHOSEN_REPO")
+
+        // val binding: FragmentRepoDetailBinding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_repo_detail,container,false)
+        //val repo = RepoDetails()
+        //TODO: something's wrong here
+        //binding.repo
+        //return container//binding.root
         return inflater.inflate(R.layout.fragment_repo_detail, container, false)
     }
 
@@ -51,11 +51,12 @@ class RepoDetailFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
-            listener = context
-        } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
-        }
+        //TODO: what about this?
+        /* if (context is OnFragmentInteractionListener) {
+             listener = context
+         } else {
+             throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+         }*/
     }
 
     override fun onDetach() {
@@ -75,7 +76,7 @@ class RepoDetailFragment : Fragment() {
      * for more information.
      */
     interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+        // TODO: Update argument type and mName
         fun onFragmentInteraction(uri: Uri)
     }
 
@@ -86,15 +87,13 @@ class RepoDetailFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment RepoDetailFragment.
+         * @return A new instance of fragment LoginFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(): RepoDetailFragment =
                 RepoDetailFragment().apply {
                     arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
                     }
                 }
     }

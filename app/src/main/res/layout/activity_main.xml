@@ -6,13 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".Views.MainActivity">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/gib_repo_button"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="onRepositorySelected"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--TODO: gtfo with this min height and width -->
+    <FrameLayout
+        android:id="@+id/fragment_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="10dp"
+        android:minHeight="10dp"
+        android:background="@android:color/holo_blue_bright"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
